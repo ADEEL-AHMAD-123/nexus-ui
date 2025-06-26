@@ -1,0 +1,48 @@
+@use '../../../styles/base/variables' as *;
+
+.contact-btn {
+  position: relative;
+  padding: 0.4rem 1rem 0.4rem 1rem; // slightly shorter and wider
+  font-weight: 400;
+  border: 1px solid $color-gray;
+  background-color: $color-light;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem; // more gap between text and icon
+  z-index: 1;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%; // Start below button
+    left: 50%;
+    transform: translateX(-50%) scaleY(0); // Hidden by default
+    width: 200%;
+    height: 300%;
+    background: $color-primary;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%; // Parabolic shape rising up
+    z-index: -1;
+    transition: transform 0.5s ease-in-out, top 0.5s ease-in-out;
+    pointer-events: none;
+  }
+
+  &:hover {
+    color: white;
+
+    &::after {
+      top: 0%; // Animate to top
+      transform: translateX(-50%) scaleY(1); // Fill upward
+    }
+  }
+
+  svg {
+    transition: transform 0.1s ease;
+    margin-left: 1rem;
+  }
+
+  &:hover svg {
+    transform: translateX(4px);
+  }
+}
