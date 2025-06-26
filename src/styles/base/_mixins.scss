@@ -1,4 +1,4 @@
-/* src/styles/base/_mixins.scss */
+@use "./variables" as *;
 
 // Media query mixin
 @mixin respond($breakpoint) {
@@ -28,3 +28,10 @@
     padding: 0 1.5rem;
   }
   
+
+
+
+
+
+
+

@@ -1,18 +1,18 @@
-@use '../../../styles/base/variables' as *;
+@use '../base/variables' as *;
 
-.contact-btn {
+.primary-btn {
   position: relative;
-  padding: 0.4rem 1rem 0.4rem 1rem; // slightly shorter and wider
+  padding: 0.4rem 1rem 0.4rem 1rem; 
   font-weight: 400;
   border: 1px solid $color-gray;
   background-color: $color-light;
   overflow: hidden;
   display: inline-flex;
   align-items: center;
-  gap: 1rem; // more gap between text and icon
+  gap: 1rem; 
   z-index: 1;
-  transition: color 0.3s ease;
-
+  transition: color 0.1s ease;
+ 
   &::after {
     content: '';
     position: absolute;
@@ -29,7 +29,7 @@
   }
 
   &:hover {
-    color: white;
+    color: $color-light;
 
     &::after {
       top: 0%; // Animate to top

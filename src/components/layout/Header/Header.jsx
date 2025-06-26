@@ -2,7 +2,7 @@ import './Header.scss';
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { services, industries } from './navData';
-import ContactButton from './ContactButton';
+import PrimaryButton from '../../common/PrimaryButton';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const Header = () => {
@@ -87,7 +87,8 @@ const Header = () => {
           </nav>
         </div>
 
-        <ContactButton />
+        <PrimaryButton className="header-btn" />
+
 
         <div className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           <span></span>
