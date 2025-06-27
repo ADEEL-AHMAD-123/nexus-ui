@@ -1,0 +1,106 @@
+@use '../../../styles/base/variables' as *;
+
+
+
+.nexus-footer {
+  background-color: $color-dark;
+  color: $color-light;
+  padding: 4rem 1.5rem 2rem;
+
+  .footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2.5rem;
+      align-items: start;
+
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: span 1;
+        h2.logo {
+          font-size: 2.2rem;
+          font-weight: 700;
+          color: $color-primary;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 1rem;
+          color: $color-gray;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+
+        .social-icons {
+          display: flex;
+          gap: 1rem;
+          margin-top: 1rem;
+
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            color: $color-light;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.2);
+              color: $color-primary;
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+
+      .footer-links {
+        h4 {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+          color: $color-light;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          li {
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+            color: $color-gray;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.2rem;
+      text-align: center;
+
+      p {
+        font-size: 0.9rem;
+        color: $color-gray;
+      }
+    }
+  }
+}
