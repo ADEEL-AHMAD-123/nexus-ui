@@ -1,6 +1,7 @@
 import React from 'react';
 import './SolutionsSection.scss';
 import pattern from '../../../assets/images/pattern.png';
+import PrimaryButton from '../../common/PrimaryButton';
 import {
   FaBolt,
   FaDatabase,
@@ -67,10 +68,15 @@ const SolutionsSection = () => (
         ))}
       </div>
 
-      <button className="solutions-btn">
-        More Solutions
-        <FaArrowRight className="cta-arrow" />
-      </button>
+      <PrimaryButton
+            to="/pricing"
+            textColor="#000000"
+            bgColor="#fff"
+            hoverTextColor="#3534FF"
+            hoverBgColor="#fff"
+          >
+            More Soloutions
+          </PrimaryButton>
     </div>
   </section>
 );
