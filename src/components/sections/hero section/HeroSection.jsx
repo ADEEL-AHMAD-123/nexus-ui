@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './HeroSection.scss';
 
-import hero1 from '../../assets/images/hero1.webp';
-import hero2 from '../../assets/images/hero2.webp';
-import pattern from '../../assets/images/pattern.png';
+import hero1 from '../../../assets/images/hero1.webp';
+import hero2 from '../../../assets/images/hero2.webp';
+import pattern from '../../../assets/images/pattern.png';
 
 const Hero = () => {
   const [animate, setAnimate] = useState(false);
