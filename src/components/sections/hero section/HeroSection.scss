@@ -73,7 +73,7 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      gap: 2rem;
+      gap: 1rem;
       position: relative;
       flex-wrap: nowrap;
 
@@ -81,7 +81,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
+        gap: 3rem;
       }
 
       .hero-img {
@@ -112,7 +112,7 @@
       
 
       .hero-img1 {
-        margin-top: -10px;
+        margin-top: -30px;
       }
 
       .hero-img2 {
@@ -131,7 +131,7 @@
         }
 
         &.pattern-bottom-right {
-          bottom: -150px;
+          bottom: -120px;
           right: 20px;
           transform: scaleX(-1) scaleY(-1);
           animation: float-flip 6s ease-in-out infinite;
@@ -139,7 +139,7 @@
 
         &.pattern-left {
           top: 60%;
-          left: -180px;
+          left: -160px;
           transform: scaleX(-1) translateY(-50%);
           animation: float 6s ease-in-out infinite;
         }

@@ -1,0 +1,48 @@
+@use '../../../styles/base/variables' as *;
+
+
+.stats-section {
+  padding: 5rem 1rem;
+  background-color: $primary-border;
+  border-bottom: $primary-border;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-lg;
+    
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+
+      text-align: center;
+      padding: $spacing-md;
+      border-radius: 8px;
+
+      h3 {
+        font-size: 3.5rem;
+        font-weight: 500;
+        color: $color-dark;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: $color-dark;
+      }
+    }
+  }
+}
