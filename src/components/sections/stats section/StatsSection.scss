@@ -1,11 +1,11 @@
 @use '../../../styles/base/variables' as *;
 
-
 .stats-section {
   padding: 5rem 1rem;
-  background-color: $primary-border;
-  border-bottom: $primary-border;
+  background-color: $border-primary;
+  border-bottom: $border-primary;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -15,18 +15,22 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: $spacing-lg;
-    
+
+    @media (max-width: $breakpoint-lg) {
+      gap: $spacing-md;
+    }
 
     @media (max-width: $breakpoint-md) {
       grid-template-columns: repeat(2, 1fr);
     }
 
+    // ✅ Keep 2 columns even on small devices
     @media (max-width: $breakpoint-sm) {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-sm;
     }
 
     .stat-card {
-
       text-align: center;
       padding: $spacing-md;
       border-radius: 8px;
@@ -36,13 +40,26 @@
         font-weight: 500;
         color: $color-dark;
         margin-bottom: 1.5rem;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: 2.2rem;
+          margin-bottom: 1rem;
+        }
       }
 
       p {
         font-size: 1.3rem;
         font-weight: 300;
         color: $color-dark;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: 1rem;
+        }
       }
     }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 3rem 0.75rem;
   }
 }

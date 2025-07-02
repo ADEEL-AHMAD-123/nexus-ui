@@ -1,0 +1,19 @@
+@use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
+
+.contact-hero {
+  width: 100%;
+  height: 60vh;
+  background-image: url('../../assets/images/contact-hero-image.webp'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include respond(md) {
+    height: 50vh;
+  }
+
+  @include respond(sm) {
+    height: 40vh;
+  }
+}

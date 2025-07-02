@@ -9,7 +9,7 @@
   animation: fadeUp 0.8s ease forwards;
   animation-delay: 0.2s;
 
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-sm) {
     padding: 3rem 1rem;
   }
 
@@ -59,7 +59,7 @@
     p {
       margin: 1.5rem 0 2.5rem;
       font-size: 1.125rem;
-      color: #666;
+      color: $color-dark;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
@@ -99,14 +99,14 @@
       
         @media (max-width: 992px) {
           width: 95%;
-          height: 350px !important; // reduce height here
+          height: 350px !important;
           &:hover {
             transform: none !important;
           }
         }
       
         @media (max-width: 576px) {
-          height: 220px; // even smaller for very small devices
+          height: 220px; 
         }
       }
       

@@ -20,8 +20,10 @@ const PrimaryButton = ({
 
   return (
     <Link to={to} className={`primary-btn ${className}`} style={style}>
-      {children} <ArrowUpRight size={16} />
-    </Link>
+    <span className="btn-text">{children}</span>
+    <span className="btn-icon"><ArrowUpRight size={16} /></span>
+  </Link>
+  
   );
 };
 

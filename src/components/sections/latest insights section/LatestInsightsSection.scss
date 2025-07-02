@@ -84,7 +84,7 @@
     background-color: $color-light;
     overflow: hidden;
     text-align: left;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: $shadow-primary;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

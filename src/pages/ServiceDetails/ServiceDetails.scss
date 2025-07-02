@@ -1,0 +1,87 @@
+@use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
+
+.service-details-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  .hero-image {
+    width: 100%;
+    height: 70vh;
+    background: url('../../assets/images/service-hero.webp') center/cover no-repeat;
+    position: relative;
+    z-index: 1;
+
+    @include respond(sm) {
+      height: 40vh;
+    }
+  }
+
+  .service-content {
+    background-color: $color-light;
+    margin-top: -10rem;
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    z-index: 2;
+    width: 98%;
+    margin-bottom: 5rem;
+
+    @include respond(md) {
+      padding: 3.5rem 1.5rem 2.5rem;
+    }
+
+    @include respond(sm) {
+      margin-top: -3rem;
+      padding: 3rem 1rem 2rem;
+    }
+
+    .container {
+      @include container;
+    }
+
+    .heading-area {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      .service-title {
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: $color-dark;
+
+        @include respond(sm) {
+          font-size: 2rem;
+        }
+      }
+
+      .service-subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: $color-dark;
+        max-width: 700px;
+        margin: 0 auto;
+
+        @include respond(sm) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .paragraphs {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: $color-dark;
+
+        @include respond(sm) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@use '../../../styles/base/variables' as *;
+@use '../../../styles/base/mixins' as *;
+
+.carousel-section {
+  padding: 5rem 1rem;
+  background-color: $color-accent-background;
+
+  .container {
+    @include container;
+  }
+
+  .carousel-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    color: $color-dark;
+
+    @include respond(sm) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .carousel-card {
+    flex: 0 0 auto;
+    width: 260px;
+    background-color: $color-light;
+    padding: 2rem;
+    box-shadow: $shadow-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+
+    .icon {
+      color: $color-primary;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: $color-dark;
+      margin: 0;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    @include respond(sm) {
+      width: 180px;
+      padding: 1.2rem 1rem;
+      align-items: center;
+      text-align: center;
+
+      .icon {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
