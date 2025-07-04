@@ -52,7 +52,65 @@ color: $color-light;
     align-items: center;
     flex: 0 0 auto;
     width: calc((100% - (1.5rem * (var(--visible-cards) - 1))) / var(--visible-cards));
+    
+    .quote {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: $color-dark;
+      margin-bottom: 1.2rem;
+    }
+  
+    .client-name {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: $color-dark;
+    }
+  
+    .client-role {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: $color-gray;
+      margin-top: 0;
+    }
   }
+  
+  @media (max-width: $breakpoint-md) {
+    .card {
+      padding: 1.5rem;
+  
+      .quote {
+        font-size: 0.8rem;
+      }
+  
+      .client-name {
+        font-size: 0.95rem;
+      }
+  
+      .client-role {
+        font-size: 0.85rem;
+      }
+    }
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    .card {
+      padding: 1.2rem;
+  
+      .quote {
+        font-size: 0.8rem;
+      }
+  
+      .client-name {
+        font-size: 0.9rem;
+      }
+  
+      .client-role {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  
 
   .arrows {
     display: flex;
@@ -115,5 +173,22 @@ color: $color-light;
     .quote {
       font-size: 0.9rem;
     }
+  }
+}
+.stars {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.1rem;
+  color: gold;
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+
+  .empty {
+    color: $color-gray;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
   }
 }

@@ -1,38 +1,34 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './TestimonialsSection.scss';
-import client1 from '../../../assets/images/client.webp';
-import client2 from '../../../assets/images/client2.webp';
+import React, { useState, useEffect, useRef } from "react";
+import "./TestimonialsSection.scss";
 
 const testimonials = [
   {
-    avatar: client1,
-    name: 'Jane Doe',
-    role: 'CEO, Acme Corp',
-    quote: 'Working with NEXUS Technologies transformed our product vision into reality—we’ve seen 150% growth.'
+    name: "DERRICK W.",
+    role: "Real Estate Broker",
+    quote:
+      "We needed a custom CRM to manage real estate operations and Nexus nailed it. They built exactly what we envisioned intuitive, clean, and built to scale. Communication was smooth and deadlines were always met.",
+      rating:5,
   },
   {
-    avatar: client2,
-    name: 'John Smith',
-    role: 'CTO, BetaSoft',
-    quote: 'Their agile delivery and expert guidance improved our security and performance across all platforms.'
+    name: "JULIA DOЕ",
+    role: "Businesswoman",
+    quote:
+      "Working with Nexus Technologies felt like having an in-house tech partner.They helped us develop a subscription-based mobile app from scratch, including a backend dashboard. Revenue started coming in 2 weeks after launch",
+      rating:4,
   },
   {
-    avatar: client1,
-    name: 'Sarah Lynn',
-    role: 'PM, NovaApp',
-    quote: 'NEXUS delivered on time, with high quality. Our app’s UX is better than ever.'
+    name: "SARAH DOE",
+    role: "Businesswoman",
+    quote:
+      "We brought Nexus on to rescue a half-built project and it was the best decision we made. He restructured the entire app and got us back on track for a successful launch. Reliable, strategic, and truly committed to quality",
+      rating:5,
   },
   {
-    avatar: client2,
-    name: 'Tom Hanks',
-    role: 'Founder, Startly',
-    quote: 'Great team, great results! Highly recommended for any SaaS startup.'
-  },
-  {
-    avatar: client1,
-    name: 'Sarah Lynn',
-    role: 'PM, NovaApp',
-    quote: 'NEXUS delivered on time, with high quality. Our app’s UX is better than ever.'
+    name: "EMILY R.",
+    role: "SaaS Founder",
+    quote:
+      "From concept to launch, Nexxus Technologies delivered exactly what we needed and more. The team understood our vision, guided us through the MVP phase, and helped us go to market in record time. We've already seen a spike in user retention.",
+      rating:5,
   },
 ];
 
@@ -49,8 +45,8 @@ const TestimonialsSection = () => {
       else setVisibleCards(3);
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const maxIndex = Math.max(0, testimonials.length - visibleCards);
@@ -60,7 +56,7 @@ const TestimonialsSection = () => {
     const cardWidth = containerRef.current.offsetWidth / visibleCards;
     containerRef.current.scrollTo({
       left: cardWidth * idx,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
     setIndex(idx);
   };
@@ -72,31 +68,45 @@ const TestimonialsSection = () => {
     <section className="testimonials-section">
       <div className="container">
         <h2>What Our Clients Say</h2>
-        <p className="subtitle">Trusted by businesses worldwide for delivering exceptional digital products.</p>
+        <p className="subtitle">
+          Trusted by businesses worldwide for delivering exceptional digital
+          products.
+        </p>
 
         <div className="carousel-wrapper">
           <div className="carousel" ref={containerRef}>
             {testimonials.map((t, i) => (
-              <div
-                className="card"
-                key={i}
-                style={{
-                    '--visible-cards': visibleCards,
-                  }}
-                  
-              >
-                <img src={t.avatar} alt={t.name} className="avatar" />
-                <p className="quote">“{t.quote}”</p>
-                <p className="client-name">{t.name}</p>
-                <p className="client-role">{t.role}</p>
-              </div>
+         <div
+         className="card"
+         key={i}
+         style={{ "--visible-cards": visibleCards }}
+       >
+         <p className="quote">“{t.quote}”</p>
+       
+         {/* ⭐️ Star Ratings */}
+         <div className="stars">
+           {Array.from({ length: 5 }, (_, i) => (
+             <span key={i} className={i < t.rating ? 'filled' : 'empty'}>
+               ★
+             </span>
+           ))}
+         </div>
+       
+         <p className="client-name">{t.name}</p>
+         <p className="client-role">{t.role}</p>
+       </div>
+       
             ))}
           </div>
 
           {testimonials.length > visibleCards && (
             <div className="arrows">
-              <button onClick={prev} disabled={index === 0}>‹</button>
-              <button onClick={next} disabled={index === maxIndex}>›</button>
+              <button onClick={prev} disabled={index === 0}>
+                ‹
+              </button>
+              <button onClick={next} disabled={index === maxIndex}>
+                ›
+              </button>
             </div>
           )}
         </div>

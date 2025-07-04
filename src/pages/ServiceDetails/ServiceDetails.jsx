@@ -1,48 +1,60 @@
-import React from 'react';
-import KeyBenefits from '../../components/sections/key benefits/KeyBenefits';
-import SolutionsCarousel from '../../components/sections/solutions carousel/SolutionsCarousel';
-import './ServiceDetails.scss';
-import TestimonialsSection from '../../components/sections/testimonials section/TestimonialsSection'
-import ConsultationSection from '../../components/sections/consultation section/ConsultationSection';
+import React from "react";
+import { useParams } from "react-router-dom";
+import servicesData from "../../data/servicesData.json";
+import ServiceFAQs from "../../components/sections/ServiceFAQs/ServiceFAQs";
+import { serviceFaqs } from "../../data/serviceFaqs";
+
+
+import KeyBenefits from "../../components/sections/key benefits/KeyBenefits";
+import SolutionsCarousel from "../../components/sections/solutions carousel/SolutionsCarousel";
+import TestimonialsSection from "../../components/sections/testimonials section/TestimonialsSection";
+import ConsultationSection from "../../components/sections/consultation section/ConsultationSection";
+import "./ServiceDetails.scss";
+
 const ServiceDetails = () => {
+  const { serviceSlug } = useParams();
+  console.log("URL slug:", serviceSlug);
+  const service = servicesData.find((s) => s.slug === serviceSlug);
+
+  if (!service) {
+    console.error("No service found for slug:", serviceSlug);
+    return (
+      <div className="container">
+        <h2>Service Not Found</h2>
+      </div>
+    );
+  }
+
   return (
     <>
-    <div className="service-details-page">
-      {/* Hero Image */}
-      <div className="hero-image" />
+      <div className="service-details-page">
+        {/* Hero Image */}
+        <div
+          className="hero-image"
+          style={{ backgroundImage: `url(${service.heroImage})` }}
+        />
 
-      {/* Content */}
-      <section className="service-content">
-        <div className="container">
-          <div className="heading-area">
-            <h1 className="service-title">Management Service</h1>
-            <p className="service-subtitle">
-              Management Service involves training models using data to enable machines to make decisions and predictions autonomously.
-            </p>
+        {/* Content */}
+        <section className="service-content">
+          <div className="container">
+            <div className="heading-area">
+              <h1 className="service-title">{service.title}</h1>
+              <p className="service-subtitle">{service.subtitle}</p>
+            </div>
+
+            <div className="paragraphs">
+              {service.paragraphs.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
           </div>
-
-          <div className="paragraphs">
-            <p>
-              We're your strategic partners in digital transformation. With over a decade of experience and a team of certified experts, we deliver tailored solutions that drive growth, enhance efficiency, and secure your digital assets.
-            </p>
-            <p>
-              Luminous works with businesses of all sizes, from small startups to large enterprises. We tailor our solutions to meet the specific needs and budget of each client, offering a wide range of IT services.
-            </p>
-            <p>
-              We invest heavily in ongoing training and professional development for our team. We also participate in industry conferences, maintain partnerships with leading technology providers, and conduct internal research and development projects.
-            </p>
-          </div>
-        </div>
-
-        
-      </section>
-      {/* vertical carousel to display more soloutions */}
-      
-    </div>
-    <SolutionsCarousel/>
-    <KeyBenefits/>
-    <TestimonialsSection/>
-    <ConsultationSection/>
+        </section>
+      </div>
+      <ServiceFAQs faqs={serviceFaqs[serviceSlug] || []} />
+      <SolutionsCarousel />
+      <KeyBenefits />
+      <TestimonialsSection />
+      <ConsultationSection />
     </>
   );
 };

@@ -3,7 +3,7 @@
 
 .carousel-section {
   padding: 5rem 1rem;
-  background-color: $color-accent-background;
+  background-color: $color-secondary-background;
 
   .container {
     @include container;
@@ -14,7 +14,7 @@
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 2.5rem;
-    color: $color-dark;
+    color: $color-light;
 
     @include respond(sm) {
       font-size: 1.5rem;
