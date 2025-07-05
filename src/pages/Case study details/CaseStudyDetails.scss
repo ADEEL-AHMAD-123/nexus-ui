@@ -1,0 +1,89 @@
+@use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
+
+.case-study-details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .hero-image {
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include respond(md) {
+      height: 50vh;
+    }
+
+    @include respond(sm) {
+      height: 40vh;
+    }
+  }
+
+  .case-content {
+    background-color: $color-light;
+    margin-top: -10rem;
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    z-index: 2;
+    width: 98%;
+    margin-bottom: 5rem;
+
+
+    @include respond(md) {
+      padding: 3.5rem 1.5rem 2.5rem;
+    }
+
+    @include respond(sm) {
+      margin-top: -3rem;
+      padding: 3rem 1rem 2rem;
+    }
+
+    .container {
+      @include container;
+    }
+
+    .heading-area {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      .case-title {
+        font-size: 3rem;
+        font-weight: 500;
+        color: $color-dark;
+
+        @include respond(sm) {
+          font-size: 2rem;
+        }
+      }
+
+      .case-subtitle {
+        font-size: 1.2rem;
+        color: $color-gray;
+        font-weight: 300;
+
+        @include respond(sm) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .paragraphs {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: $color-dark;
+
+        @include respond(sm) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

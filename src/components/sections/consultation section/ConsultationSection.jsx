@@ -9,7 +9,7 @@ const ConsultationSection = () => (
         <h2>Book a Free Consultation</h2>
         <p>Schedule a no-obligation consultation to discuss your unique needs and how Luminous can elevate your business technology.</p>
         <PrimaryButton
-            to="/pricing"
+            to="/contact"
             textColor="#fff"
             bgColor="#3534FF"
             hoverTextColor="#3534FF"

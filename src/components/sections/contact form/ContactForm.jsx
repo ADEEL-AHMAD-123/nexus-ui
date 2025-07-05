@@ -46,7 +46,6 @@ const ContactForm = () => {
           </div>
 
           <PrimaryButton
-            to="/pricing"
             textColor="#fff"
             bgColor="#3534FF"
             hoverTextColor="#3534FF"

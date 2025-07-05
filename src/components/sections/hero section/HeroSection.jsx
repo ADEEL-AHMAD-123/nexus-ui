@@ -25,7 +25,7 @@ const Hero = () => {
             and perform.
           </p>
           <PrimaryButton
-            to="/pricing"
+            to="#"
             textColor="#fff"
             bgColor="#3534FF"
             hoverTextColor="#3534FF"

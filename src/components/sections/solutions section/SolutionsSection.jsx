@@ -69,7 +69,7 @@ const SolutionsSection = () => (
       </div>
 
       <PrimaryButton
-            to="/pricing"
+            to="#"
             textColor="#000000"
             bgColor="#fff"
             hoverTextColor="#3534FF"

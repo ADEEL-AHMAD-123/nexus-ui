@@ -17,7 +17,7 @@ const AboutHighlights = () => {
               We bring together all the necessary technology and services to help our clients solve their business problems.
             </p>
             <PrimaryButton
-            to="/pricing"
+            to="/contact"
             textColor="#000000"
             bgColor="#fff"
             hoverTextColor="#fff"
@@ -34,7 +34,7 @@ const AboutHighlights = () => {
               We bring together all the necessary technology and services to help our clients solve their business problems.
             </p>
             <PrimaryButton
-            to="/pricing"
+            to="#"
             textColor="#000000"
             bgColor="#fff"
             hoverTextColor="#fff"

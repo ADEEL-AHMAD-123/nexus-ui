@@ -84,7 +84,7 @@ const Header = () => {
             </div>
 
             <Link to="/case-studies" onClick={handleLinkClick}>Case Studies</Link>
-<Link to="/blog" onClick={handleLinkClick}>Blog</Link>
+<Link to="/blogs" onClick={handleLinkClick}>Blogs</Link>
 <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
             <div className="social-icons">
               <a href="www.facebook.com"><i className="fab fa-facebook-f"></i></a>
@@ -95,7 +95,10 @@ const Header = () => {
           </nav>
         </div>
 
-        <PrimaryButton className="header-btn" />
+        <PrimaryButton className="header-btn" 
+        
+        to='/contact'
+        />
 
 
         <div className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>

@@ -1,0 +1,116 @@
+@use '../../styles/base/variables' as *;
+@use '../../styles/base/mixins' as *;
+
+.blog-details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .hero-image {
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include respond(md) {
+      height: 50vh;
+    }
+
+    @include respond(sm) {
+      height: 40vh;
+    }
+  }
+
+  .blog-content {
+    background-color: $color-light;
+    margin-top: -8rem;
+    padding: 5rem 4rem;
+    position: relative;
+    z-index: 2;
+    width: 98%;
+    margin-bottom: 5rem;
+
+    @include respond(md) {
+      padding: 3.5rem 1.5rem 2.5rem;
+    }
+
+    @include respond(sm) {
+      margin-top: -3rem;
+      padding: 3rem 1rem 2rem;
+    }
+
+    .container {
+      @include container;
+    }
+
+    .heading-area {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      .blog-title {
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: $color-dark;
+
+        @include respond(sm) {
+          font-size: 2rem;
+        }
+      }
+
+      .blog-subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: $color-dark;
+        max-width: 700px;
+        margin: 0 auto;
+
+        @include respond(sm) {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .author-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto 3rem;
+
+      max-width: 700px;
+
+      
+
+      .author-name {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $color-dark;
+      }
+
+      .author-date {
+        font-size: 1rem;
+        color: $color-gray;
+      }
+    }
+
+    .paragraphs {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 100%;
+      margin: 0 auto;
+
+      p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: $color-dark;
+
+        @include respond(sm) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
