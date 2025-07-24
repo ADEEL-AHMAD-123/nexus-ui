@@ -1,9 +1,9 @@
 import React from 'react'
-import AboutHero from '../../components/sections/about hero/AboutHero'
-import AboutHighlights from '../../components/sections/about highlights/AboutHighlights'
-import KeyBenefits from '../../components/sections/key benefits/KeyBenefits'
-import ServicesSection from '../../components/sections/services section/ServicesSection'
-import StatsSection from '../../components/sections/stats section/StatsSection'
+import AboutHero from '../../components/sections/AboutHero/AboutHero'
+import AboutHighlights from '../../components/sections/AboutHighlights/AboutHighlights'
+import KeyBenefits from '../../components/sections/KeyBenefits/KeyBenefits'
+import ServicesSection from '../../components/sections/ServicesSection/ServicesSection'
+import StatsSection from '../../components/sections/StatsSection/StatsSection'
 const About = () => {
   return (
 <>

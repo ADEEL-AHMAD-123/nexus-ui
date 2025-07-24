@@ -1,13 +1,13 @@
 import React from 'react'
-import BlogsSection from '../../components/sections/BlogsSection/BlogsSection';
+import CaseStudies from '../../components/sections/CaseStudiesSection/CaseStudiesSection'
 import ConsultationSection from '../../components/sections/ConsultationSection/ConsultationSection'
-const Blog = () => {
+const CaseStudiesPage = () => {
   return (
 <>
-<BlogsSection limit={6}/>
+<CaseStudies/>
 <ConsultationSection/>
 </>
   )
 }
 
-export default Blog
+export default CaseStudiesPage

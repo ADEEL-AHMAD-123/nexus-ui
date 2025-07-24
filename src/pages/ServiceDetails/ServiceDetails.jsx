@@ -1,14 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import servicesData from "../../data/servicesData.json";
+import servicesData from "../../data/servicesData";
 import ServiceFAQs from "../../components/sections/ServiceFAQs/ServiceFAQs";
 import { serviceFaqs } from "../../data/serviceFaqs";
 
 
-import KeyBenefits from "../../components/sections/key benefits/KeyBenefits";
-import SolutionsCarousel from "../../components/sections/solutions carousel/SolutionsCarousel";
-import TestimonialsSection from "../../components/sections/testimonials section/TestimonialsSection";
-import ConsultationSection from "../../components/sections/consultation section/ConsultationSection";
+import KeyBenefits from "../../components/sections/KeyBenefits/KeyBenefits";
+import SolutionsCarousel from "../../components/sections/SolutionsCarousel/SolutionsCarousel";
+import TestimonialsSection from "../../components/sections/TestimonialsSection/TestimonialsSection";
+import ConsultationSection from "../../components/sections/ConsultationSection/ConsultationSection";
 import "./ServiceDetails.scss";
 
 const ServiceDetails = () => {

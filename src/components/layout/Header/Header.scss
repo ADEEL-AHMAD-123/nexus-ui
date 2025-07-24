@@ -11,12 +11,15 @@
   height: 100px;
   border-bottom: $border-primary;
   
+  
   .container {
     @include container;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
+    z-index: 1088;
+
   }
 
   .logo a {
@@ -29,6 +32,7 @@
     flex: 1;
     display: flex;
     justify-content: center;
+   
 
     .nav {
       display: flex;
@@ -41,6 +45,7 @@
         color: $color-dark;
         font-weight: 500;
         transition: color 0.3s ease;
+       
 
         &:hover {
           color: $color-primary;
@@ -59,6 +64,9 @@
             font-weight: 500;
             color: $color-dark;
             transition: color 0.3s;
+height: 100%;
+padding: 0rem 0;
+
 
             &:hover {
               color: $color-primary;
@@ -75,11 +83,13 @@
         .mega-menu {
           background-color: $color-primary-background;
           position: fixed;
-          top: 100px;
+          top: 70px;
           left: 0;
           width: 100vw;
-          z-index: 101;
+          z-index: 100;
           padding: 3rem 0;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+
 
           .mega-menu-inner {
             @include container;
@@ -257,6 +267,7 @@
               cursor: pointer;
               transition: color 0.3s ease;
 
+
               &:hover {
                 color: $color-primary;
               }
@@ -336,19 +347,26 @@
             padding-bottom: 1rem;
 
             a {
-              color: $color-dark;
-              font-size: 1.3rem;
-              transition: color 0.3s ease;
-              border: none;
               background-color: $color-primary;
               display: flex;
               align-items: center;
               justify-content: center;
               border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              font-size: 1rem;
               color: $color-light;
-              padding: 0.5rem;
+              transition: background 0.3s ease;
             
+              &:hover {
+                background-color: darken($color-primary, 10%);
+              }
+            
+              i {
+                font-size: 1rem; // ensures consistent icon size
+              }
             }
+            
           }
         }
       }

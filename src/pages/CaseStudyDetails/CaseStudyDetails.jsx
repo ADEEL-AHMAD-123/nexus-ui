@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ConsultationSection from '../../components/sections/consultation section/ConsultationSection';
+import ConsultationSection from '../../components/sections/ConsultationSection/ConsultationSection';
 import { caseStudies } from '../../data/caseStudiesData';
 import './CaseStudyDetails.scss';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { blogs } from '../../data/blogsData';
 import './BlogDetails.scss';
-import ConsultationSection from '../../components/sections/consultation section/ConsultationSection'
+import ConsultationSection from '../../components/sections/ConsultationSection/ConsultationSection'
 
 const BlogDetails = () => {
   const { blogId } = useParams();
