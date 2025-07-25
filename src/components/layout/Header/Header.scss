@@ -89,6 +89,12 @@ padding: 0rem 0;
           z-index: 100;
           padding: 3rem 0;
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+          @include respond(sm) {
+            box-shadow: none
+          }
+          @include respond(md) {
+            box-shadow: none
+          }
 
 
           .mega-menu-inner {
